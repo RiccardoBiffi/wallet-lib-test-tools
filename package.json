@@ -1,0 +1,15 @@
+{
+  "name": "wallet-test-tools",
+  "version": "0.0.1",
+  "description": "Tools for testing wallet lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cross-fetch": "^4.0.0",
+    "node-fetch": "^3.3.2"
+  }
+}
