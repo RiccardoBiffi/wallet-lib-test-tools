@@ -2,7 +2,7 @@ const fetch = require('cross-fetch')
 
 class BitcoinCore {
 
-  constructor(config) {
+  constructor(config = {}) {
     this._network = config.network || 'regtest'
     this._node_uri = 'http://user:password@127.0.0.1:18443' || config.uri
     this._defaultWallet = 'main.dat'
