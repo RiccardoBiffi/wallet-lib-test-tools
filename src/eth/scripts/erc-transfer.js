@@ -2,19 +2,19 @@
 const { Web3 } = require('web3')
 
 const addr = "0xb89c31da0a0d796240dc99e551287f16145ce7a3"
-const amount = 1
+const { contractAddress } = require('../erc20.config.json')
+const amount = 1000
+
 async function main() {
 
-  const contractAddr = "0xb719422a0a484025c1a22a8deeafc67e81f43cfd"
-  const [deployer] = await ethers.getSigners();
-
   const Token = await ethers.getContractFactory("Token");
-  const contract = await Token.attach(contractAddr);
+  console.log(`getting contract at: ${contractAddress}`)
+  const contract = await Token.attach(contractAddress);
 
-  // Set a new message in the contract
+  console.log(`sending token to ${addr} ${amount}`)
   await contract.transfer(addr,amount);
 
-  const bal = await contract.balanceOf('0xcd27881c3c770a5206f96ec3856b7434dfbfa603')
+  const bal = await contract.balanceOf(addr)
   
   console.log(`balance of ${addr} is ${bal}`)
 }
