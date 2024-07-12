@@ -57,13 +57,13 @@ class EthTester {
   * @param {number} opts.amount amount of tokens to send
   */
   sendToken(opts) {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       const abi = this._getERC20ABI()
       const from =  this.account[0].address
       const contract = new this.web3.eth.Contract(abi, this.tokenConfig.contractAddress)
       const send = contract.methods.transfer(opts.address, opts.amount).send({
         from,
-        gas:500000
+        gas:500000,
       })
       send.on('receipt', (d) => {
         resolve(d)
