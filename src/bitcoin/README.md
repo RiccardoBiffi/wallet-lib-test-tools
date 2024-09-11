@@ -23,7 +23,7 @@ This guide will walk you through the process of setting up a Bitcoin regtest net
 
 ## Setting up Bitcoin Core in Regtest Mode
 
-Learn about (Bitcoin Regtest)[https://developer.bitcoin.org/examples/testing.html]
+Learn about [Btcoin Regtest](https://developer.bitcoin.org/examples/testing.html)
 
 1. Download and install Bitcoin Core from the official website: https://bitcoincore.org/en/download/
 
@@ -75,16 +75,6 @@ Start Bitcoin Core in regtest mode:
 ```bash
 bitcoind --regtest
 ```
-
-
-## Create new wallet
-
-Create a new internal regtest wallet
-
-```bash
-bitcoin-cli -regtest createwallet main
-```
-
 
 ## Generating Initial Blocks
 

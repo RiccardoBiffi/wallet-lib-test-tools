@@ -2,6 +2,7 @@
 
 Tools for testing wallet lib
 
-## Setting up enviroments
+## Set up local networks
 - [Bitcoin](./docs/bitcoin.md)
 - [Ethereum](./docs/ethereum.md)
+
