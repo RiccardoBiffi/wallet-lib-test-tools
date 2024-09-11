@@ -21,11 +21,8 @@ This README guides you through setting up a local Ethereum network using Hardhat
 
 ## Installation
 
-1. Clone this repository:
-   ```
-   git clone <repository-url>
-   cd <repository-name>
-   ```
+1. Clone this repository and navigate to this directory
+
 
 2. Install the dependencies:
    ```
