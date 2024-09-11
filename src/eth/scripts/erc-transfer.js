@@ -1,7 +1,7 @@
 
 const { Web3 } = require('web3')
 
-const addr = process.env.ADDR || "0xb89c31da0a0d796240dc99e551287f16145ce7a3"
+const addr = process.env.ADDR || "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
 const { contractAddress } = require('../erc20.config.json')
 const amount = process.env.AMT ||  1000
 async function main() {
@@ -11,7 +11,8 @@ async function main() {
   const contract = await Token.attach(contractAddress);
 
   console.log(`sending token to Address: ${addr} Amount:  ${amount}`)
-  await contract.transfer(addr,amount);
+  const t = await contract.transfer(addr,amount);
+  console.log(t)
 
   const bal = await contract.balanceOf(addr)
   

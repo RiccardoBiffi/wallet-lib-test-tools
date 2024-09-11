@@ -4,14 +4,19 @@ class BitcoinCore {
 
   constructor(config = {}) {
     this._network = config.network || 'regtest'
-    this._node_uri = 'http://user:password@127.0.0.1:18443' || config.uri
     this._defaultWallet = 'main.dat'
+    this._node_uri = 'http://user:password@127.0.0.1:18443/wallet/'+this._defaultWallet || config.uri
   }
 
   async init() {
     await this.startWallet()
     const addr = await this.getNewAddress()
-    if(addr.error) throw new Error(addr.error)
+    if(addr.error)  {
+      console.log(addr)
+      throw new Error('failed to create addr')
+    }
+
+
     this._miningAddress = addr.result
   }
 

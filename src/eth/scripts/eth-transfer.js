@@ -1,4 +1,4 @@
-
+const { ethers } = require("hardhat");
 
 
 const addr = process.env.ADDR || "0xb89c31da0a0d796240dc99e551287f16145ce7a3"
