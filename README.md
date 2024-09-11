@@ -3,6 +3,6 @@
 Tools for testing wallet lib
 
 ## Set up local networks
-- [Bitcoin](./docs/bitcoin.md)
-- [Ethereum](./docs/ethereum.md)
+- [Bitcoin](./src/bitcoin/README.md)
+- [Ethereum](./src/eth/README.md)
 
