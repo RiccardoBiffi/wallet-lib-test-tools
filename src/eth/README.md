@@ -55,6 +55,8 @@ This command will start a local Ethereum network and display a list of available
 
 Keep this terminal window open while working with your local network.
 
+**IMPORTANT: closing this process will reset your blockchain, you would need to redo any transactions you may have done**
+
 ## Deploying the ERC20 Token
 
 To deploy your ERC20 token to the local network:
