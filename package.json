@@ -5,12 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint" : "standard --fix"
+    "lint": "standard --fix"
   },
   "author": "rbndg",
-  "license": "MIT",
+  "license": "APACHE2.0",
   "dependencies": {
-    "cross-fetch": "^4.0.0",
-    "node-fetch": "^3.3.2"
+    "cross-fetch": "^4.0.0"
   }
 }
