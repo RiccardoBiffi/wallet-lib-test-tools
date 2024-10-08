@@ -1,5 +1,5 @@
 {
-  "name": "wallet-test-tools",
+  "name": "wallet-lib-test-tools",
   "version": "0.0.1",
   "description": "Tools for testing wallet lib",
   "main": "index.js",
