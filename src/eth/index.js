@@ -96,7 +96,7 @@ class EthTester {
 
   _getERC20ABI () {
     if (this._contractAbi) return this._contractAbi
-    const contract = JSON.parse(fs.readFileSync(__dirname + '/artifacts/contracts/erc20.sol/Token.json', 'utf8'))
+    const contract = require('./erc20-abi.json')
     this._contractAbi = contract.abi
     return this._contractAbi
   }
