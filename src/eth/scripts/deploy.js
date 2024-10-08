@@ -32,7 +32,7 @@ async function main () {
   ercConfig[network.name] = {
     contractAddress: contract.target
   }
-  fs.writeFileSync('../erc20.config.json',JSON.stringify(ercConfig, null, 2))
+  fs.writeFileSync('../erc20.config.json', JSON.stringify(ercConfig, null, 2))
 }
 
 main()

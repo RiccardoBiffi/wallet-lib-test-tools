@@ -20,7 +20,7 @@ const amount = process.env.AMT || '0.00001'
 async function main () {
   console.log(`sending token to Address: ${addr} Amount:  ${amount}`)
   const signer = await ethers.getSigners()
-  
+
   const tx = await signer[0].sendTransaction({
     to: addr,
     value: ethers.parseUnits(amount, 'ether')

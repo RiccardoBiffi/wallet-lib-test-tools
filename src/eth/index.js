@@ -14,10 +14,8 @@
 'use strict'
 
 const { Web3 } = require('web3')
-const fs = require('fs')
 const { Promise } = require('node-fetch')
 const chainIdMap = require('./chainid-map.json')
-
 
 class EthTester {
   constructor (config = {}) {
@@ -25,19 +23,18 @@ class EthTester {
     this.web3 = new Web3(config.uri || 'http://127.0.0.1:8545/')
     this.privateKey = config.privateKey || '0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80'
     this.account = this.web3.eth.accounts.wallet.add(this.privateKey)
-    if(config.tokenConfig) {
+    if (config.tokenConfig) {
       this.tokenConfig = config.tokenConfig
     }
-
   }
 
   async init () {
     const res = await this.web3.eth.getBlockNumber()
     if (typeof res !== 'bigint') throw new Error('web3 not ready')
-    if(!this.tokenConfig) {
-      const networkId = await this.web3.eth.net.getId(); 
+    if (!this.tokenConfig) {
+      const networkId = await this.web3.eth.net.getId()
       const chainName = chainIdMap[networkId]
-      if(!chainName) throw new Error('invalid chain id')
+      if (!chainName) throw new Error('invalid chain id')
       this.tokenConfig = require('./erc20.config.json')[chainName]
     }
   }
@@ -75,7 +72,7 @@ class EthTester {
   * @param {number} opts.amount amount of tokens to send
   */
   sendToken (opts) {
-    return new Promise(async (resolve, reject) => {
+    return new Promise((resolve, reject) => {
       const abi = this._getERC20ABI()
       const from = this.account[0].address
       const contract = new this.web3.eth.Contract(abi, this.tokenConfig.contractAddress)
