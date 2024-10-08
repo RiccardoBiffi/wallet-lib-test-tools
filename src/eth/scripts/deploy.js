@@ -14,8 +14,11 @@
 'use strict'
 
 const fs = require('fs')
+const ercConfig = require('../erc20.config.json')
+
 async function main () {
   const [deployer] = await ethers.getSigners()
+  const network = await ethers.provider.getNetwork()
 
   console.log(
     'Deploying contracts with the account:',
@@ -26,9 +29,10 @@ async function main () {
   const contract = await Token.deploy()
 
   console.log('Contract deployed at:', contract.target)
-  fs.writeFileSync('./erc20.config.json', JSON.stringify({
+  ercConfig[network.name] = {
     contractAddress: contract.target
-  }, null, 2))
+  }
+  fs.writeFileSync('../erc20.config.json',JSON.stringify(ercConfig, null, 2))
 }
 
 main()

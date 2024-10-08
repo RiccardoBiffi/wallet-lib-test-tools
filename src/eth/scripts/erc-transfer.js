@@ -16,9 +16,14 @@
 const { Web3 } = require('web3')
 
 const addr = process.env.ADDR || '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
-const { contractAddress } = require('../erc20.config.json')
-const amount = process.env.AMT || 1000
+const contracts  = require('../erc20.config.json')
+const amount = process.env.AMT || 1
+
 async function main () {
+  let  network = (await ethers.provider.getNetwork()).name
+  if(network === 'localhost') network = 'hardhat'
+  const { contractAddress } = contracts[network]
+  console.log('Running on network', network.name)
   const Token = await ethers.getContractFactory('Token')
   console.log(`getting contract at: ${contractAddress}`)
   const contract = await Token.attach(contractAddress)

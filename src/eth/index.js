@@ -16,20 +16,24 @@
 const { Web3 } = require('web3')
 const fs = require('fs')
 const { Promise } = require('node-fetch')
+const chainIdMap = require('./chainid-map.json')
+
 
 class EthTester {
   constructor (config = {}) {
     this.config = config
     this.web3 = new Web3(config.uri || 'http://127.0.0.1:8545/')
     this.privateKey = config.privateKey || '0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80'
-    this.tokenConfig = require('./erc20.config.json')
-
     this.account = this.web3.eth.accounts.wallet.add(this.privateKey)
   }
 
   async init () {
     const res = await this.web3.eth.getBlockNumber()
     if (typeof res !== 'bigint') throw new Error('web3 not ready')
+    const networkId = await this.web3.eth.net.getId(); 
+    const chainName = chainIdMap[networkId]
+    if(!chainName) throw new Error('invalid chain id')
+    this.tokenConfig = require('./erc20.config.json')[chainName]
   }
 
   mine (opts = {}) {
