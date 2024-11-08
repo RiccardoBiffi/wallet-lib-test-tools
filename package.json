@@ -11,5 +11,8 @@
   "license": "APACHE2.0",
   "dependencies": {
     "cross-fetch": "^4.0.0"
+  },
+  "devDependencies": {
+    "standard": "^17.1.2"
   }
 }
