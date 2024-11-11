@@ -13,8 +13,6 @@
 // limitations under the License.
 'use strict'
 
-const { Web3 } = require('web3')
-
 const addr = process.env.ADDR || '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266'
 const contracts = require('../erc20.config.json')
 const amount = process.env.AMT || 1

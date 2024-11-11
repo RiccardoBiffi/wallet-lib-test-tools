@@ -14,5 +14,8 @@
   },
   "devDependencies": {
     "standard": "^17.1.2"
+  },
+  "standard": {
+    "globals": [ "ethers"]
   }
 }
