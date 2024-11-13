@@ -1,0 +1,20 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.11",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-web3-v4": "^1.0.0",
+    "hardhat": "^2.22.5",
+    "web3": "^4.10.0"
+  },
+  "scripts": {
+    "lint" : "standard --fix",
+    "start" : "npx hardhat node",
+    "deploy-token": "npx hardhat run ./scripts/deploy.js --network localhost"
+  },
+  "license": "APACHE2.0",
+  "dependencies": {
+    "@ethereumjs/wallet": "^2.0.3",
+    "web3-eth-contract": "^4.5.0"
+  }
+}

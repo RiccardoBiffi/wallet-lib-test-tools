@@ -1,0 +1,8 @@
+{
+  "sepolia" : {
+    "contractAddress": "0xbF43558373B4ED1E024186F18f611c0e209d1cEC"
+  },
+  "hardhat" : {
+    "contractAddress" :  "0x5FbDB2315678afecb367f032d93F642f64180aa3"
+  }
+}

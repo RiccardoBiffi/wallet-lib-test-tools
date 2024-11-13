@@ -1,0 +1,21 @@
+{
+  "name": "wallet-lib-test-tools",
+  "version": "0.0.1",
+  "description": "Tools for testing wallet lib",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard --fix"
+  },
+  "author": "rbndg",
+  "license": "APACHE2.0",
+  "dependencies": {
+    "cross-fetch": "^4.0.0"
+  },
+  "devDependencies": {
+    "standard": "^17.1.2"
+  },
+  "standard": {
+    "globals": [ "ethers"]
+  }
+}

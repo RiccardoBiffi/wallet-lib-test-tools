@@ -1,0 +1,10 @@
+npm-debug.log*
+test/spec.json
+
+cli/data/
+cli/config.json
+tmp
+watch-dir
+
+# Dependency directories
+node_modules/
