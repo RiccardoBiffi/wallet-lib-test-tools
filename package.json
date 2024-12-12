@@ -10,12 +10,15 @@
   "author": "rbndg",
   "license": "APACHE2.0",
   "dependencies": {
-    "cross-fetch": "^4.0.0"
+    "cross-fetch": "^4.0.0",
+    "web3": "^4.16.0"
   },
   "devDependencies": {
     "standard": "^17.1.2"
   },
   "standard": {
-    "globals": [ "ethers"]
+    "globals": [
+      "ethers"
+    ]
   }
 }
