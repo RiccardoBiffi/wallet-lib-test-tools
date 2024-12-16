@@ -8,3 +8,6 @@ watch-dir
 
 # Dependency directories
 node_modules/
+
+# Dependency versions
+package-lock.json
