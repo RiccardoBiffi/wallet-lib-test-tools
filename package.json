@@ -10,6 +10,7 @@
   "author": "rbndg",
   "license": "APACHE2.0",
   "dependencies": {
+    "bitcoinjs-lib": "^6.1.7",
     "cross-fetch": "^4.0.0",
     "web3": "^4.16.0"
   },
