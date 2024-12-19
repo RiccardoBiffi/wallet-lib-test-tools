@@ -63,6 +63,14 @@ class BitcoinCore {
     return this._apiCall('unloadwallet', [opts.filename || this._defaultWallet])
   }
 
+  getBlockchainInfo() {
+    return this._apiCall('getblockchaininfo', [])
+  }
+
+  getTransaction(opts) {
+    return this._apiCall('gettransaction', [opts.txid, opts.include_watchonly || true, opts.verbose || false])
+  }
+
   getBalance(opts) {
     return this._apiCall('getbalance', opts)
   }
@@ -104,6 +112,10 @@ class BitcoinCore {
     let reversedHash = hash.reverse()
     return reversedHash.toString('hex')
   }
+
+  // scriptHashToAddress(scriptHash) {
+  //todo 
+  // }
 
   async _apiCall(method, params) {
     const body = {
